@@ -11,7 +11,7 @@ def get_desc():
 	return "Glew generic glew interface (for windows only)"
 
 def get_licence():
-	return "BSD-3"
+	return "GPL"
 
 def get_maintainer():
 	return ["Milan Ikits <milan ikits@ieee org>",
@@ -32,20 +32,18 @@ def create(target, module_name):
 			],
 			destination_path="GL")
 		
-		#my_module.add_export_path(tools.get_current_path(__file__) + "/glew/include/")
 		if target.config["bus-size"] == "32":
-			my_module.add_export_flag('link', [
+			my_module.add_export_flag('link-lib', [
 				os.path.join(tools.get_current_path(__file__), "glew/lib/Release/Win32/glew32s.lib")
 				])
 		else:
-			my_module.add_export_flag('link', [
+			my_module.add_export_flag('link-lib', [
 				os.path.join(tools.get_current_path(__file__), "glew/lib/Release/x64/glew32s.lib")
 				])
-		my_module.add_export_flag('link', [
-			"-lopengl32",
-			"-lgdi32",
-			"-static-libgcc",
-			"-static-libstdc++"])
+		my_module.add_export_flag('link-lib', [
+			"opengl32",
+			"gdi32"
+			])
 		return my_module
 	else:
 		return None
