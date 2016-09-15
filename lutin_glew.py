@@ -11,7 +11,7 @@ def get_desc():
 	return "Glew generic glew interface (for windows only)"
 
 def get_licence():
-	return "GPL"
+	return "BSD-3"
 
 def get_maintainer():
 	return ["Milan Ikits <milan ikits@ieee org>",
