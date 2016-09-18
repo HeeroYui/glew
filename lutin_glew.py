@@ -5,7 +5,7 @@ import os
 
 
 def get_type():
-	return "LIBRARY_STATIC"
+	return "LIBRARY"
 
 def get_desc():
 	return "Glew generic glew interface (for windows only)"
@@ -34,8 +34,8 @@ def create(target, module_name):
 		    destination_path="GL")
 		my_module.add_src_file([
 		    'glew/src/glew.c',
-		    'glew/src/glewinfo.c',
-		    'glew/src/visualinfo.c'
+		    #'glew/src/glewinfo.c',
+		    #'glew/src/visualinfo.c'
 		    ])
 		"""
 		my_module.add_src_file([
