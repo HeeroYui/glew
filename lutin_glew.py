@@ -58,11 +58,10 @@ def create(target, module_name):
 		    'glew/auto/src/glewinfo_glx.c',
 		    ])
 		"""
-		my_module.add_flag('link-lib', [
-		    "opengl32",
-		    "gdi32"
-		    ],
-		    export=True)
+		my_module.add_depend([
+		    "opengl",
+		    "gdi"
+		    ])
 		my_module.add_path("glew/auto/src/")
 		return my_module
 	else:
